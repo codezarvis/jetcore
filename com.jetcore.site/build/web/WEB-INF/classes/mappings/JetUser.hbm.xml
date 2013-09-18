@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.app.jetcore.main.domain.sub.JetUser" table="jet_user" discriminator-value="0">
+        <id column="jet_uid" name="id" type="java.lang.Long">
+            <generator class="native" />
+        </id>
+        
+        <property column="jet_guid" name="guid" type="java.lang.String" />
+        
+        <property column="jet_email" name="email" type="java.lang.String" />
+        <property column="jet_password" name="password" type="java.lang.String" />
+        <property column="jet_screen_name" name="screenName" type="java.lang.String" />
+        <property column="jet_first_name" name="firstName" type="java.lang.String" />
+        <property column="jet_last_name" name="lastName" type="java.lang.String" />
+        <property column="jet_gender" name="gender" type="java.lang.String" />
+        <property column="jet_security_question" name="securityQuestion" type="java.lang.String" />
+        <property column="jet_answer" name="securityAnswer" type="java.lang.String" />
+        <property column="jet_type" name="type" type="java.lang.String" />
+       
+        <property column="jet_created_on" name="createdOn" type="java.util.Date" />
+        <property column="jet_created_by" name="createdBy" type="java.lang.Long" />
+        <property column="jet_modified_on" name="modifiedOn" type="java.util.Date" />
+        <property column="jet_modified_by" name="modifiedBy" type="java.lang.Long" />        
+        <property column="jet_active" name="active" type="java.lang.Short" />
+    </class>
+</hibernate-mapping>
