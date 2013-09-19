@@ -5,9 +5,10 @@
 package com.app.jetcore.test.service;
 
 import com.app.jetcore.main.domain.service.JetUserService;
+import com.app.jetcore.main.domain.sub.JetUser;
 import com.app.jetcore.main.utils.AppContext;
 import com.app.jetcore.test.domain.JetCoreTestCase;
-import com.appjetcore.context.id.names.ContextIdNames;
+import com.app.jetcore.context.id.names.ContextIdNames;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
@@ -54,6 +55,16 @@ public class JetUserServiceImplTest extends JetCoreTestCase {
     @Test
     public void testGet() {
         JetUserService jetUserService = (JetUserService) AppContext.APPCONTEXT.getBean(ContextIdNames.JET_USER_SERVICE);
-        assertNotNull(jetUserService.get(2L));
+        assertNotNull(jetUserService.get(1L));
+    }
+    
+    @Test
+    
+    public void testFindByGuid() {
+        JetUserService jetUserService = (JetUserService) AppContext.APPCONTEXT.getBean(ContextIdNames.JET_USER_SERVICE);
+        JetUser jetUser = jetUserService.get(1L);
+        LOG.debug(jetUser.getGuid());
+        
+        assertNotNull(jetUserService.findByGuid(jetUser.getGuid()));
     }
 }
