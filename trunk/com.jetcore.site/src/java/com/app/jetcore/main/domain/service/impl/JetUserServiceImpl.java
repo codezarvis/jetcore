@@ -70,6 +70,7 @@ public class JetUserServiceImpl extends ServiceImpl implements JetUserService {
         Session session = HibernateUtils.currentSession();
         try {
             Query query = session.createQuery(JetUserQueries.FIND_BY_GUID);
+            //Query query = session.getNamedQuery("findByGuid");
             query.setParameter("guid", guid);
             jetUser = (JetUser) query.uniqueResult();
         } catch (Exception exception) {
