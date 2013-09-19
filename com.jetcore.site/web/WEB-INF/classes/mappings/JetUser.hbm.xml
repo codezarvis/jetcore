@@ -26,4 +26,6 @@
         <property column="jet_modified_by" name="modifiedBy" type="java.lang.Long" />        
         <property column="jet_active" name="active" type="java.lang.Short" />
     </class>
+    
+    
 </hibernate-mapping>
