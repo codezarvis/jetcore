@@ -7,7 +7,7 @@ USE `jetcore` ;
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `jet_user` ;
 
-CREATE  TABLE IF NOT EXISTS `gsn_user` (
+CREATE  TABLE IF NOT EXISTS `jet_user` (
   `jet_uid` BIGINT(10) UNSIGNED NOT NULL auto_increment,
   `jet_guid` VARCHAR(64) NOT NULL ,
   `jet_email` VARCHAR(255) NULL ,
