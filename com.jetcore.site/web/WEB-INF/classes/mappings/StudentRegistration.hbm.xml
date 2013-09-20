@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.app.jetcore.main.domain.sub.StudentRegistration" table="jet_student_registration" discriminator-value="0">
+        <id column="jet_uid" name="id" type="java.lang.Long">
+            <generator class="native" />
+        </id>
+        
+        <property column="jet_guid" name="guid" type="java.lang.String" />
+        
+        <property column="jet_enrollment_number" name="enrollmentNumber" type="java.lang.String" />
+        <property column="jet_enrollment_date" name="enrollmentDate" type="java.util.Date" />
+        <property column="jet_enrolled_course" name="enrolledCourse" type="java.lang.String" />
+        <property column="jet_batch_code" name="batchCode" type="java.lang.String" />
+        <property column="jet_student_first_name" name="studentFirstName" type="java.lang.String" />
+        <property column="jet_student_last_name" name="studentLastName" type="java.lang.String" />
+       
+        <property column="jet_created_on" name="createdOn" type="java.util.Date" />
+        <property column="jet_created_by" name="createdBy" type="java.lang.Long" />
+        <property column="jet_modified_on" name="modifiedOn" type="java.util.Date" />
+        <property column="jet_modified_by" name="modifiedBy" type="java.lang.Long" />        
+        <property column="jet_active" name="active" type="java.lang.Short" />
+        
+        <one-to-one name="studentContact" class="com.app.jetcore.main.domain.sub.StudentContact" property-ref="id" 
+                    cascade="all">
+        </one-to-one>
+    </class>
+    
+    
+</hibernate-mapping>
