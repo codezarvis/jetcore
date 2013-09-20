@@ -63,6 +63,7 @@ DROP TABLE IF EXISTS `jet_student_contact` ;
 CREATE  TABLE IF NOT EXISTS `jet_student_contact` (
   `jet_uid` BIGINT(10) UNSIGNED NOT NULL auto_increment,
   `jet_guid` VARCHAR(64) NOT NULL ,
+  `jet_enrollment_number` VARCHAR(255) NULL ,
   `jet_gender` VARCHAR(255) NULL ,
   `jet_email` VARCHAR(255) NULL ,
   `jet_mobile` VARCHAR(255) NULL ,
@@ -72,8 +73,7 @@ CREATE  TABLE IF NOT EXISTS `jet_student_contact` (
   `jet_modified_on` DATETIME NOT NULL ,
   `jet_modified_by` BIGINT(10) UNSIGNED NULL ,
   `jet_active` TINYINT(1) UNSIGNED NULL DEFAULT 1 ,
-  PRIMARY KEY (`jet_uid`), INDEX `FK_STUDENT_REGISTRATION` (`jet_uid`),
-    CONSTRAINT `FK_STUDENT_REGISTRATION` FOREIGN KEY (`jet_uid`) REFERENCES `jet_student_registration` (`jet_uid`) )
+  PRIMARY KEY (`jet_uid`) )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;
