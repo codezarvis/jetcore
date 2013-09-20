@@ -18,6 +18,8 @@
         -->
 
         <mapping resource="mappings/JetUser.hbm.xml" />
+        <mapping resource="mappings/StudentRegistration.hbm.xml" />
+        <mapping resource="mappings/StudentContact.hbm.xml" />
         
 		
     </session-factory>
