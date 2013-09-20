@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.app.jetcore.main.utils;
 
 import org.springframework.context.ApplicationContext;
