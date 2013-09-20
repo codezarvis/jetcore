@@ -6,11 +6,14 @@
 
 
     <bean id="jetUserService" class="com.app.jetcore.main.domain.service.impl.JetUserServiceImpl"
-              scope="singleton">
+          scope="singleton">
 
     </bean>
 
-	
+    <bean id="studentRegistrationService" class="com.app.jetcore.main.domain.service.impl.StudentRegistrationServiceImpl"
+      scope="singleton">
+
+    </bean>	
 
 
 </beans>
