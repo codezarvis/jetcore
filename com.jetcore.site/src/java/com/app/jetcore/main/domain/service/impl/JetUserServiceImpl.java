@@ -39,7 +39,6 @@ public class JetUserServiceImpl extends ServiceImpl implements JetUserService {
             }
             HibernateUtils.closeSession();
         }
-        jetUser = findByGuid(jetUser.getGuid());
         return jetUser;
     }
 
