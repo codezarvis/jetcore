@@ -11,9 +11,17 @@
     </bean>
 
     <bean id="studentRegistrationService" class="com.app.jetcore.main.domain.service.impl.StudentRegistrationServiceImpl"
-      scope="singleton">
+          scope="singleton">
 
     </bean>	
+    
+    <bean id="studentContactService" class="com.app.jetcore.main.domain.service.impl.StudentContactServiceImpl"
+          scope="singleton">
+
+    </bean>	
+
+
+    
 
 
 </beans>
