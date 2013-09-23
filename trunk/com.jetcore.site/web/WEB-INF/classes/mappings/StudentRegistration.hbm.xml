@@ -23,9 +23,9 @@
         <property column="jet_modified_by" name="modifiedBy" type="java.lang.Long" />        
         <property column="jet_active" name="active" type="java.lang.Short" />
         
-        <one-to-one name="studentContact" class="com.app.jetcore.main.domain.sub.StudentContact" property-ref="id" 
-                    cascade="all">
-        </one-to-one>
+        <many-to-one name="studentContact" column="jet_uid" cascade="all" insert="false" update="false" lazy="false">
+        </many-to-one>
+		
     </class>
     
     
