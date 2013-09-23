@@ -12,5 +12,13 @@ import com.app.jetcore.main.domain.sub.StudentRegistration;
  */
 public interface StudentRegistrationService extends Service{
     
-    StudentRegistration create(StudentRegistration studentRegistration);
+    StudentRegistration create(final StudentRegistration studentRegistration);
+    
+    StudentRegistration findByEnrollmentNumber(final String enrollmentNumber);
+    
+    StudentRegistration get(final long uid);
+    
+    StudentRegistration findByGuid(final String guid);
+    
+    
 }
