@@ -59,7 +59,7 @@ public class JetUserServiceImplTest extends JetCoreTestCase {
     public void testFindByGuid() {
         JetUserService jetUserService = (JetUserService) AppContext.APPCONTEXT.getBean(ContextIdNames.JET_USER_SERVICE);
         JetUser jetUser = jetUserService.get(1L);
-        LOG.debug(jetUser.getGuid());
+        //LOG.debug(jetUser.getGuid());
         
         assertNotNull(jetUserService.findByGuid(jetUser.getGuid()));
     }
