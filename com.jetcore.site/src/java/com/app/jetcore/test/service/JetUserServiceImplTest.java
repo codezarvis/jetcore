@@ -8,6 +8,7 @@ import com.app.jetcore.context.id.names.ContextIdNames;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertEquals;
 
 /**
  *
@@ -54,8 +55,7 @@ public class JetUserServiceImplTest extends JetCoreTestCase {
         assertNotNull(jetUserService.get(1L));
     }
     
-    @Test
-    
+    @Test    
     public void testFindByGuid() {
         JetUserService jetUserService = (JetUserService) AppContext.APPCONTEXT.getBean(ContextIdNames.JET_USER_SERVICE);
         JetUser jetUser = jetUserService.get(1L);
