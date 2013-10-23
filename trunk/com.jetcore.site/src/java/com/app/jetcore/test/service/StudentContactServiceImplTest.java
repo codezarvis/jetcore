@@ -44,7 +44,7 @@ public class StudentContactServiceImplTest extends JetCoreTestCase {
         StudentContactService studentContactService = (StudentContactService) AppContext.APPCONTEXT.getBean(ContextIdNames.STUDENT_CONTACT_SERVICE);
         StudentContact studentContact = studentContactService.findByMobile("9676534400");
         
-        LOG.debug(studentContact);
+        //LOG.debug(studentContact);
         
         assertNotNull(studentContact);
     }
