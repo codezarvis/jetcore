@@ -44,6 +44,8 @@ CREATE  TABLE IF NOT EXISTS `jet_student_registration` (
   `jet_batch_code` VARCHAR(255) NULL ,
   `jet_student_first_name` VARCHAR(255) NOT NULL ,  
   `jet_student_last_name` VARCHAR(255) NOT NULL ,    
+  `jet_student_category` VARCHAR(255) NOT NULL ,
+  `jet_student_date_of_birth` DATETIME NOT NULL ,    
   `jet_created_on` DATETIME NOT NULL ,
   `jet_created_by` BIGINT(10) UNSIGNED NULL ,
   `jet_modified_on` DATETIME NOT NULL ,
@@ -77,3 +79,43 @@ CREATE  TABLE IF NOT EXISTS `jet_student_contact` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;
+
+
+-- -----------------------------------------------------
+-- Table `jet_student_acedamic_detail`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `jet_student_acedamic_detail` ;
+
+CREATE  TABLE IF NOT EXISTS `jet_student_acedamic_detail` (
+  `jet_uid` BIGINT(10) UNSIGNED NOT NULL auto_increment,
+  `jet_guid` VARCHAR(64) NOT NULL ,
+  `jet_enrollment_number` VARCHAR(255) NULL ,
+  `jet_ssc_marks` VARCHAR(255) NULL ,
+  `jet_ssc_year_of_passing` VARCHAR(255) NULL ,
+  `jet_ssc_institution_name` VARCHAR(255) NULL ,
+  `jet_intermediate_marks` VARCHAR(255) NULL ,
+  `jet_intermediate_year_of_passing` VARCHAR(255) NULL ,
+  `jet_intermediate_institution_name` VARCHAR(255) NULL ,
+  `jet_graduation` VARCHAR(255) NULL ,
+  `jet_graduation_marks` VARCHAR(255) NULL ,
+  `jet_graduation_year_of_passing` VARCHAR(255) NULL ,
+  `jet_graduation_institution_name` VARCHAR(255) NULL ,
+  `jet_postgraduation` VARCHAR(255) NULL ,
+  `jet_postgraduation_marks` VARCHAR(255) NULL ,
+  `jet_postgraduation_year_of_passing` VARCHAR(255) NULL ,
+  `jet_postgraduation_institution_name` VARCHAR(255) NULL ,
+  `jet_created_on` DATETIME NOT NULL ,
+  `jet_created_by` BIGINT(10) UNSIGNED NULL ,
+  `jet_modified_on` DATETIME NOT NULL ,
+  `jet_modified_by` BIGINT(10) UNSIGNED NULL ,
+  `jet_active` TINYINT(1) UNSIGNED NULL DEFAULT 1 ,
+  PRIMARY KEY (`jet_uid`) )
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_unicode_ci;
+
+
+/*truncate table jet_user;
+truncate table jet_student_registration;
+truncate table jet_student_contact;
+truncate table jet_student_acedamic_detail;*/
