@@ -19,6 +19,15 @@
     <bean id="studentContact" class="com.app.jetcore.main.domain.sub.StudentContact" scope="prototype">
         
     </bean>
+    
+    <bean id="studentAcedamicDetail" class="com.app.jetcore.main.domain.sub.StudentAcedamicDetail" scope="prototype">
+    
+    </bean>
+    
+    <bean id="dateFormat" class="java.text.SimpleDateFormat" scope="singleton">
+        <constructor-arg value="dd-MM-yyyy"/> 
+        
+    </bean>
 
 
 </beans>
