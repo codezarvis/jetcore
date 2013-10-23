@@ -1,6 +1,7 @@
 package com.app.jetcore.test.domain;
 
 import com.app.jetcore.test.service.JetUserServiceImplTest;
+import com.app.jetcore.test.service.StudentAcedamicDetailServiceImplTest;
 import com.app.jetcore.test.service.StudentContactServiceImplTest;
 import com.app.jetcore.test.service.StudentRegistrationServiceImplTest;
 import org.apache.log4j.Logger;
@@ -17,7 +18,8 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({ JetUserServiceImplTest.class,
                       StudentRegistrationServiceImplTest.class,
-                      StudentContactServiceImplTest.class
+                      StudentContactServiceImplTest.class,
+                      StudentAcedamicDetailServiceImplTest.class
                     })
 public class CoreTestSuite {
 
