@@ -17,10 +17,10 @@
         <property name="hibernate.connection.password">jacSLjcfWt</property>
         -->
 
-        <mapping resource="mappings/JetUser.hbm.xml" />
-        <mapping resource="mappings/StudentRegistration.hbm.xml" />
-        <mapping resource="mappings/StudentContact.hbm.xml" />
-        
+        <mapping resource="mappings/JetUser.hbm.xml"/>
+        <mapping resource="mappings/StudentRegistration.hbm.xml"/>
+        <mapping resource="mappings/StudentContact.hbm.xml"/>
+        <mapping resource="mappings/StudentAcedamicDetail.hbm.xml"/>
 		
     </session-factory>
 </hibernate-configuration>
