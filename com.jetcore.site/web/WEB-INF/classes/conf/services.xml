@@ -20,6 +20,10 @@
 
     </bean>	
 
+    <bean id="studentAcedamicDetailService" class="com.app.jetcore.main.domain.service.impl.StudentAcedamicDetailServiceImpl"
+          scope="singleton">
+
+    </bean>	
 
     
 
