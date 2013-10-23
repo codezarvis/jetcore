@@ -16,7 +16,10 @@ public class StudentRegistration extends Domain {
     private String batchCode;
     private String studentFirstName;
     private String studentLastName;
+    private String category;
+    private Date dateOfBirth;
     private StudentContact studentContact;
+    private StudentAcedamicDetail studentAcedamicDetail;
 
     public StudentRegistration() {
         setGuid(UUID.randomUUID().toString());
@@ -70,6 +73,22 @@ public class StudentRegistration extends Domain {
         this.studentLastName = studentLastName;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
     public StudentContact getStudentContact() {
         return studentContact;
     }
@@ -78,10 +97,16 @@ public class StudentRegistration extends Domain {
         this.studentContact = studentContact;
     }
 
-    @Override
-    public String toString() {
-        return "StudentRegistration{" + "enrollmentNumber=" + enrollmentNumber + ", enrollmentDate=" + enrollmentDate + ", enrolledCourse=" + enrolledCourse + ", batchCode=" + batchCode + ", studentFirstName=" + studentFirstName + ", studentLastName=" + studentLastName + ", studentContact=" + studentContact + '}';
+    public StudentAcedamicDetail getStudentAcedamicDetail() {
+        return studentAcedamicDetail;
     }
 
-   
+    public void setStudentAcedamicDetail(StudentAcedamicDetail studentAcedamicDetail) {
+        this.studentAcedamicDetail = studentAcedamicDetail;
+    }
+
+    @Override
+    public String toString() {
+        return "StudentRegistration{" + "enrollmentNumber=" + enrollmentNumber + ", enrollmentDate=" + enrollmentDate + ", enrolledCourse=" + enrolledCourse + ", batchCode=" + batchCode + ", studentFirstName=" + studentFirstName + ", studentLastName=" + studentLastName + ", category=" + category + ", dateOfBirth=" + dateOfBirth + ", studentContact=" + studentContact + ", studentAcedamicDetail=" + studentAcedamicDetail + '}';
+    }
 }
