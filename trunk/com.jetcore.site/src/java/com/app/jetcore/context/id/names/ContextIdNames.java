@@ -16,6 +16,8 @@ public interface ContextIdNames {
     
     public static final String DATE_FORMAT = "dateFormat";
     
+    public static final String QUALF_MAP = "qualfMap";
+    
     public static final String JET_USER_SERVICE = "jetUserService";
     
     public static final String STUDENT_REGISTRATION_SERVICE = "studentRegistrationService";
