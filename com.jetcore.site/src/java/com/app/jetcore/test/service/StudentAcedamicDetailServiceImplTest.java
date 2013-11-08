@@ -20,7 +20,13 @@ public class StudentAcedamicDetailServiceImplTest extends JetCoreTestCase {
     public void testFindByEnrollmentNumber() {
 
         StudentAcedamicDetailService studentAcedamicDetailService = (StudentAcedamicDetailService) AppContext.APPCONTEXT.getBean(ContextIdNames.STUDENT_ACEDAMIC_DETAIL_SERVICE);
-        LOG.debug(studentAcedamicDetailService.findByEnrollmentNumber("111"));
+        //LOG.debug(studentAcedamicDetailService.findByEnrollmentNumber("111"));
         assertNotNull(studentAcedamicDetailService.findByEnrollmentNumber("111"));
+    }
+    
+    @Test
+    public void testFindByQualfAndMarks() {
+        StudentAcedamicDetailService studentAcedamicDetailService = (StudentAcedamicDetailService) AppContext.APPCONTEXT.getBean(ContextIdNames.STUDENT_ACEDAMIC_DETAIL_SERVICE);
+        LOG.debug(studentAcedamicDetailService.findByQualfAndMarks("ssc", "80%"));
     }
 }

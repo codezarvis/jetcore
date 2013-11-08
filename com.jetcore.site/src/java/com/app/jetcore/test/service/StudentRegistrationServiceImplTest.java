@@ -22,7 +22,7 @@ public class StudentRegistrationServiceImplTest extends JetCoreTestCase {
     
     private static Logger LOG = Logger.getLogger(StudentRegistrationServiceImplTest.class);
     
-    /*@Test
+    @Test
     public void testCreate() {
         
         StudentRegistration studentRegistration = (StudentRegistration) AppContext.APPCONTEXT.getBean(ContextIdNames.STUDENT_REGISTRATION);
@@ -31,13 +31,13 @@ public class StudentRegistrationServiceImplTest extends JetCoreTestCase {
         StudentRegistrationService studentRegistrationService = (StudentRegistrationService) AppContext.APPCONTEXT.getBean(ContextIdNames.STUDENT_REGISTRATION_SERVICE);
         
         
-        studentRegistration.setEnrollmentNumber("111");
+        studentRegistration.setEnrollmentNumber("333");
         studentRegistration.setEnrollmentDate(new java.util.Date());
         studentRegistration.setBatchCode("BATCH1");
         studentRegistration.setEnrolledCourse("CJET");
         studentRegistration.setStudentContact(studentContact);
-        studentRegistration.setStudentFirstName("Student1 First Name");
-        studentRegistration.setStudentLastName("Student1 Last Name");
+        studentRegistration.setStudentFirstName("Student3 First Name");
+        studentRegistration.setStudentLastName("Student3 Last Name");
         studentRegistration.setCategory("GEN");
         String dateOfBirthString = "14-08-1984";
         SimpleDateFormat dateFormat = (SimpleDateFormat) AppContext.APPCONTEXT.getBean(ContextIdNames.DATE_FORMAT);
@@ -56,8 +56,8 @@ public class StudentRegistrationServiceImplTest extends JetCoreTestCase {
         
         studentContact.setEnrollmentNumber(studentRegistration.getEnrollmentNumber());
         studentContact.setGender("Male");
-        studentContact.setEmail("student1@cmc.com");
-        studentContact.setMobile("9676534400");
+        studentContact.setEmail("student2@cmc.com");
+        studentContact.setMobile("9848584518");
         studentContact.setAddress("Student Address");
         studentContact.setCreatedOn(new java.util.Date());
         studentContact.setCreatedBy(1L);
@@ -71,10 +71,10 @@ public class StudentRegistrationServiceImplTest extends JetCoreTestCase {
         studentAcedamicDetail.setEnrollmentNumber(studentRegistration.getEnrollmentNumber());
         studentAcedamicDetail.setSscInstitutionName("XYZ");
         studentAcedamicDetail.setSscYearOfPassing("2000");
-        studentAcedamicDetail.setSscMarks("90%");
+        studentAcedamicDetail.setSscMarks("80%");
         studentAcedamicDetail.setIntermediateInstitutionName("PQR");
         studentAcedamicDetail.setIntermediateYearOfPassing("2002");
-        studentAcedamicDetail.setIntermediateMarks("70%");
+        studentAcedamicDetail.setIntermediateMarks("80%");
         studentAcedamicDetail.setGraduationInstitutionName("LMN");
         studentAcedamicDetail.setGraduation("BSC");
         studentAcedamicDetail.setGraduationYearOfPassing("2005");
@@ -92,7 +92,7 @@ public class StudentRegistrationServiceImplTest extends JetCoreTestCase {
         studentRegistration.setStudentAcedamicDetail(studentAcedamicDetail);
         
         studentRegistrationService.create(studentRegistration);
-    }*/
+    }
     
     @Test
     public void testGet() {
