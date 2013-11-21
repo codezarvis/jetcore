@@ -27,6 +27,6 @@ public class StudentAcedamicDetailServiceImplTest extends JetCoreTestCase {
     @Test
     public void testFindByQualfAndMarks() {
         StudentAcedamicDetailService studentAcedamicDetailService = (StudentAcedamicDetailService) AppContext.APPCONTEXT.getBean(ContextIdNames.STUDENT_ACEDAMIC_DETAIL_SERVICE);
-        LOG.debug(studentAcedamicDetailService.findByQualfAndMarks("ssc", "80%"));
+        LOG.debug(studentAcedamicDetailService.findByQualfAndMarks("intermediate", "85%").size());
     }
 }
