@@ -1,1 +1,3 @@
-Welcome to jetCore !
+<%
+        response.sendRedirect(request.getContextPath()+"/home");
+%>
