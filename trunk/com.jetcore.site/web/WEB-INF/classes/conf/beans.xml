@@ -29,10 +29,14 @@
         
     </bean>
     
-    <!--
+    
+    <bean id="map" class="java.util.HashMap" scope="prototype">
+        
+        
+    </bean>
     <bean id="qualfMap" class="com.app.jetcore.main.utils.QualfMap">
         
-    </bean>-->
+    </bean>
 
 
 </beans>
