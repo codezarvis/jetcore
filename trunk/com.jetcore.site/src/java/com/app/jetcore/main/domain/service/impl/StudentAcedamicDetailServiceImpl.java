@@ -6,6 +6,7 @@ import com.app.jetcore.main.domain.service.StudentRegistrationService;
 import com.app.jetcore.main.domain.sub.StudentAcedamicDetail;
 import com.app.jetcore.main.domain.sub.StudentRegistration;
 import com.app.jetcore.main.utils.AppContext;
+import com.app.jetcore.main.utils.QualfMap;
 //import com.app.jetcore.main.utils.QualfMap;
 import com.app.jetcore.main.utils.hibernate.HibernateUtils;
 import java.util.List;
@@ -43,18 +44,20 @@ public class StudentAcedamicDetailServiceImpl extends ServiceImpl implements Stu
     @Override
     public List<StudentAcedamicDetail> findByQualfAndMarks(String qualf, String marks) {
         List<StudentAcedamicDetail> list = null;
-//        Session session = HibernateUtils.currentSession();
-//        String qualification = QualfMap.getQualf(qualf);
-//        LOG.debug("==================Qualf is : "+qualification);
-//        try {
-//            Criteria criteria = session.createCriteria(StudentAcedamicDetail.class);
-//            criteria.add(Restrictions.eq(qualification, qualf)).add(Restrictions.ge(qualification, marks));
-//            list = criteria.list();
-//        } catch (Exception exception) {
-//            LOG.warn("StudentAcedamicDeatilServiceImpl", exception);
-//        } finally {
-//            HibernateUtils.closeSession();
-//        }
+        Session session = HibernateUtils.currentSession();
+        QualfMap qualfMap = (QualfMap) AppContext.APPCONTEXT.getBean(ContextIdNames.QUALF_MAP);
+        String qualification = qualfMap.getQualf(qualf);
+
+        try {
+            Criteria criteria = session.createCriteria(StudentAcedamicDetail.class);
+
+            criteria.add(Restrictions.ge(qualification, marks));
+            list = criteria.list();
+        } catch (Exception exception) {
+            LOG.warn("StudentAcedamicDeatilServiceImpl", exception);
+        } finally {
+            HibernateUtils.closeSession();
+        }
         return list;
     }
 }
