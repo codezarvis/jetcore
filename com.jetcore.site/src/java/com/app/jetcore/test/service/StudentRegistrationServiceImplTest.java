@@ -22,77 +22,77 @@ public class StudentRegistrationServiceImplTest extends JetCoreTestCase {
     
     private static Logger LOG = Logger.getLogger(StudentRegistrationServiceImplTest.class);
     
-    @Test
-    public void testCreate() {
-        
-        StudentRegistration studentRegistration = (StudentRegistration) AppContext.APPCONTEXT.getBean(ContextIdNames.STUDENT_REGISTRATION);
-        StudentContact studentContact = (StudentContact) AppContext.APPCONTEXT.getBean(ContextIdNames.STUDENT_CONTACT);
-        StudentAcedamicDetail studentAcedamicDetail = (StudentAcedamicDetail) AppContext.APPCONTEXT.getBean(ContextIdNames.STUDENT_ACEDAMIC_DETAIL);
-        StudentRegistrationService studentRegistrationService = (StudentRegistrationService) AppContext.APPCONTEXT.getBean(ContextIdNames.STUDENT_REGISTRATION_SERVICE);
-        
-        
-        studentRegistration.setEnrollmentNumber("333");
-        studentRegistration.setEnrollmentDate(new java.util.Date());
-        studentRegistration.setBatchCode("BATCH1");
-        studentRegistration.setEnrolledCourse("CJET");
-        studentRegistration.setStudentContact(studentContact);
-        studentRegistration.setStudentFirstName("Student3 First Name");
-        studentRegistration.setStudentLastName("Student3 Last Name");
-        studentRegistration.setCategory("GEN");
-        String dateOfBirthString = "14-08-1984";
-        SimpleDateFormat dateFormat = (SimpleDateFormat) AppContext.APPCONTEXT.getBean(ContextIdNames.DATE_FORMAT);
-        Date dateOfBirth = null;
-        try {
-            dateOfBirth = dateFormat.parse(dateOfBirthString);
-        } catch (ParseException ex) {
-            LOG.debug("StudentRegistrationServiceImplTest", ex);
-        }
-        studentRegistration.setDateOfBirth(dateOfBirth);
-        studentRegistration.setCreatedOn(new java.util.Date());
-        studentRegistration.setCreatedBy(1L);
-        studentRegistration.setModifiedOn(new java.util.Date());
-        studentRegistration.setModifiedBy(1L);
-        studentRegistration.setActive(Short.parseShort("1"));
-        
-        studentContact.setEnrollmentNumber(studentRegistration.getEnrollmentNumber());
-        studentContact.setGender("Male");
-        studentContact.setEmail("student2@cmc.com");
-        studentContact.setMobile("9848584518");
-        studentContact.setAddress("Student Address");
-        studentContact.setCreatedOn(new java.util.Date());
-        studentContact.setCreatedBy(1L);
-        studentContact.setModifiedOn(new java.util.Date());
-        studentContact.setModifiedBy(1L);
-        studentContact.setActive(Short.parseShort("1"));
-        
-        
-        studentRegistration.setStudentContact(studentContact);
-        
-        studentAcedamicDetail.setEnrollmentNumber(studentRegistration.getEnrollmentNumber());
-        studentAcedamicDetail.setSscInstitutionName("XYZ");
-        studentAcedamicDetail.setSscYearOfPassing("2000");
-        studentAcedamicDetail.setSscMarks("80%");
-        studentAcedamicDetail.setIntermediateInstitutionName("PQR");
-        studentAcedamicDetail.setIntermediateYearOfPassing("2002");
-        studentAcedamicDetail.setIntermediateMarks("80%");
-        studentAcedamicDetail.setGraduationInstitutionName("LMN");
-        studentAcedamicDetail.setGraduation("BSC");
-        studentAcedamicDetail.setGraduationYearOfPassing("2005");
-        studentAcedamicDetail.setGraduationMarks("80%");
-        studentAcedamicDetail.setPostGraduationInstitutionName("IJK");
-        studentAcedamicDetail.setPostGraduation("MTECH");
-        studentAcedamicDetail.setPostGraduationYearOfPassing("2007");
-        studentAcedamicDetail.setPostGraduationMarks("60%");
-        studentAcedamicDetail.setCreatedOn(new java.util.Date());
-        studentAcedamicDetail.setCreatedBy(1L);
-        studentAcedamicDetail.setModifiedOn(new java.util.Date());
-        studentAcedamicDetail.setModifiedBy(1L);
-        studentAcedamicDetail.setActive(Short.parseShort("1"));
-        
-        studentRegistration.setStudentAcedamicDetail(studentAcedamicDetail);
-        
-        studentRegistrationService.create(studentRegistration);
-    }
+//    @Test
+//    public void testCreate() {
+//        
+//        StudentRegistration studentRegistration = (StudentRegistration) AppContext.APPCONTEXT.getBean(ContextIdNames.STUDENT_REGISTRATION);
+//        StudentContact studentContact = (StudentContact) AppContext.APPCONTEXT.getBean(ContextIdNames.STUDENT_CONTACT);
+//        StudentAcedamicDetail studentAcedamicDetail = (StudentAcedamicDetail) AppContext.APPCONTEXT.getBean(ContextIdNames.STUDENT_ACEDAMIC_DETAIL);
+//        StudentRegistrationService studentRegistrationService = (StudentRegistrationService) AppContext.APPCONTEXT.getBean(ContextIdNames.STUDENT_REGISTRATION_SERVICE);
+//        
+//        
+//        studentRegistration.setEnrollmentNumber("222");
+//        studentRegistration.setEnrollmentDate(new java.util.Date());
+//        studentRegistration.setBatchCode("BATCH1");
+//        studentRegistration.setEnrolledCourse("CJET");
+//        studentRegistration.setStudentContact(studentContact);
+//        studentRegistration.setStudentFirstName("Student2 First Name");
+//        studentRegistration.setStudentLastName("Student2 Last Name");
+//        studentRegistration.setCategory("GEN");
+//        String dateOfBirthString = "14-08-1985";
+//        SimpleDateFormat dateFormat = (SimpleDateFormat) AppContext.APPCONTEXT.getBean(ContextIdNames.DATE_FORMAT);
+//        Date dateOfBirth = null;
+//        try {
+//            dateOfBirth = dateFormat.parse(dateOfBirthString);
+//        } catch (ParseException ex) {
+//            LOG.debug("StudentRegistrationServiceImplTest", ex);
+//        }
+//        studentRegistration.setDateOfBirth(dateOfBirth);
+//        studentRegistration.setCreatedOn(new java.util.Date());
+//        studentRegistration.setCreatedBy(1L);
+//        studentRegistration.setModifiedOn(new java.util.Date());
+//        studentRegistration.setModifiedBy(1L);
+//        studentRegistration.setActive(Short.parseShort("1"));
+//        
+//        studentContact.setEnrollmentNumber(studentRegistration.getEnrollmentNumber());
+//        studentContact.setGender("Male");
+//        studentContact.setEmail("student1@cmc.com");
+//        studentContact.setMobile("9848584519");
+//        studentContact.setAddress("Student Address");
+//        studentContact.setCreatedOn(new java.util.Date());
+//        studentContact.setCreatedBy(1L);
+//        studentContact.setModifiedOn(new java.util.Date());
+//        studentContact.setModifiedBy(1L);
+//        studentContact.setActive(Short.parseShort("1"));
+//        
+//        
+//        studentRegistration.setStudentContact(studentContact);
+//        
+//        studentAcedamicDetail.setEnrollmentNumber(studentRegistration.getEnrollmentNumber());
+//        studentAcedamicDetail.setSscInstitutionName("XYZ");
+//        studentAcedamicDetail.setSscYearOfPassing("2000");
+//        studentAcedamicDetail.setSscMarks("60%");
+//        studentAcedamicDetail.setIntermediateInstitutionName("PQR");
+//        studentAcedamicDetail.setIntermediateYearOfPassing("2002");
+//        studentAcedamicDetail.setIntermediateMarks("80%");
+//        studentAcedamicDetail.setGraduationInstitutionName("LMN");
+//        studentAcedamicDetail.setGraduation("BSC");
+//        studentAcedamicDetail.setGraduationYearOfPassing("2005");
+//        studentAcedamicDetail.setGraduationMarks("80%");
+//        studentAcedamicDetail.setPostGraduationInstitutionName("IJK");
+//        studentAcedamicDetail.setPostGraduation("MTECH");
+//        studentAcedamicDetail.setPostGraduationYearOfPassing("2007");
+//        studentAcedamicDetail.setPostGraduationMarks("60%");
+//        studentAcedamicDetail.setCreatedOn(new java.util.Date());
+//        studentAcedamicDetail.setCreatedBy(1L);
+//        studentAcedamicDetail.setModifiedOn(new java.util.Date());
+//        studentAcedamicDetail.setModifiedBy(1L);
+//        studentAcedamicDetail.setActive(Short.parseShort("1"));
+//        
+//        studentRegistration.setStudentAcedamicDetail(studentAcedamicDetail);
+//        
+//        studentRegistrationService.create(studentRegistration);
+//    }
     
     @Test
     public void testGet() {
