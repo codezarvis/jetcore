@@ -29,9 +29,10 @@
         
     </bean>
     
+    <!--
     <bean id="qualfMap" class="com.app.jetcore.main.utils.QualfMap">
         
-    </bean>
+    </bean>-->
 
 
 </beans>
