@@ -80,7 +80,7 @@
         <div id="loginDialog" title="jetCore Login">
             <p class="validateTips">All form fields are required.</p>
 
-            <sf:form id="loginForm">
+            <sf:form id="loginForm" modelAttribute="loginForm">
                 <fieldset>
                     <label for="email">Email</label>
                     <sf:input type="text" name="email" id="email" value="" path="email" cssClass="text ui-widget-content ui-corner-all" />
