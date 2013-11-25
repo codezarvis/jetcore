@@ -27,7 +27,7 @@ public class LoginController {
     @RequestMapping(method = RequestMethod.POST)
     public String doLogin(@ModelAttribute LoginForm loginForm) {
         JetUserService jetUserService = (JetUserService) AppContext.APPCONTEXT.getBean(ContextIdNames.JET_USER_SERVICE);
-        JetUser jetUser = jetUserService.authenticate(loginForm.getUserName(), loginForm.getPassword());
+        JetUser jetUser = jetUserService.authenticate(loginForm.getEmail(), loginForm.getPassword());
 
         if (jetUser == null) {
             return "false";
