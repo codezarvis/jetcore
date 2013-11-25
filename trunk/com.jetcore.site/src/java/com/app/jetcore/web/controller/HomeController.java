@@ -5,7 +5,9 @@
 package com.app.jetcore.web.controller;
 
 import com.app.jetcore.main.utils.JetSpringContext;
+import com.app.jetcore.web.forms.LoginForm;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -21,7 +23,7 @@ public class HomeController {
         JetSpringContext.init();
     }
     @RequestMapping(method = RequestMethod.GET)
-    public String showHome() {
+    public String showHome(@ModelAttribute LoginForm loginForm) {
         return "home";
     }
 }
