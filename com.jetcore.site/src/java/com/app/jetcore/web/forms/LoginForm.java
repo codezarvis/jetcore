@@ -10,15 +10,15 @@ package com.app.jetcore.web.forms;
  */
 public class LoginForm {
 
-    private String userName;
+    private String email;
     private String password;
 
-    public String getUserName() {
-        return userName;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -31,6 +31,8 @@ public class LoginForm {
 
     @Override
     public String toString() {
-        return "LoginForm{" + "userName=" + userName + ", password=" + password + '}';
+        return "LoginForm{" + "email=" + email + ", password=" + password + '}';
     }
+
+    
 }
