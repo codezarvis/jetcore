@@ -4,7 +4,7 @@
     <head>
         <title>jetCore | Home</title>
 
-        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/assets/css/redmond/jquery-ui-1.10.3.custom.min.css">
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/assets/css/redmond/jquery-ui-1.10.3.custom.css">
         <script type="text/javascript" src="${pageContext.request.contextPath}/resources/assets/js/jquery-1.9.1.js"></script>
         <script type="text/javascript" src="${pageContext.request.contextPath}/resources/assets/js/jquery-ui-1.10.3.custom.min.js"></script>
 
@@ -23,15 +23,41 @@
             .ui-dialog .ui-state-error { padding: .3em; }
             .validateTips { border: 1px solid transparent; padding: 0.3em; }
 
+            #appHome_Ajax_Loading {
+                position: relative;
+                top:0px;
+                left:4px;
+                width:100px;
+                display: none;
+                font-size: 12px;
+                font-family: Tahoma;
+            }
+
+            #logged_in {
+                padding: 5px;
+                margin: 23px 0 100px 43px;
+                padding: 5px;
+                text-align: center;
+                width: 400px;
+                top:100px;
+            }
+
+
+
+
         </style>
 
         <script>
+            function showPage() {
+                window.location = '${pageContext.request.contextPath}/admin';
+            }
             $(document).ready(function() {
+
+
 
                 $("#loginDialog").dialog({
                     autoOpen: false,
                     width: 400,
-                    position:'center',
                     modal: true,
                     hide: 'explode',
                     resizable: false,
@@ -39,32 +65,57 @@
                         {
                             text: "Sign In",
                             click: function() {
-                              $.ajax({
-                                 type:'POST' ,
-                                 url:'',
-                                 data:$('#loginForm').serialize(),
-                                 success: function(response) {
-                                     alert(response);
-                                 }
-                                  
-                              }) ;
+                                //$('#appHome_Ajax_Loading').show();
+                                $.ajax({
+                                    type: 'POST',
+                                    url: '${pageContext.request.contextPath}/login',
+                                    data: $('#loginForm').serialize(),
+                                    success: function(response) {
+                                        if (response == "true") {
+                                            $("#appHome_Ajax_Loading").hide();
+                                            $("#login_response").empty();
+                                            var login_response = '<div id="logged_in">'
+                                                    + '<div style="width: 350px; float: left; margin-left: 70px;">'
+                                                    + '<div style="width: 40px; float: left;">'
+                                                    + '<img style="margin: 5px 5px 5px 0px;" src="resources/assets/images/spinner.gif">'
+                                                    + '</div>'
+                                                    + '<div style="margin: 5px 5px 5px 5px;width: 300px;color:#2A2A2A;font:18px Arial,Helvetica,sans-serif;">'
+                                                    + "You are successfully logged in! <br /> Please wait while you're redirected...</div></div>";
+                                            $(".ui-widget-header").hide();
+                                            $(".ui-dialog-buttonpane").hide();
+                                            $("#loginDialog").dialog({
+                                                width: 480,
+                                                height: 220
+                                            });
+                                            $('#loginDialog').html(login_response);
+                                            setTimeout('showPage()', 3000);
+                                        } else {
+                                            $("#appHome_Ajax_Loading").hide();
+                                            alert("Invalid");
+                                        }
+
+                                    },
+                                    beforeSend: function() {
+                                        $("#appHome_Ajax_Loading").css('display', 'inline', 'important');
+                                    }
+
+                                });
                             }
                         },
                         {
                             text: "Cancel",
                             click: function() {
-                                $(this).dialog("close");
 
+                                $('#appHome_Ajax_Loading').hide();
                             }
                         }
                     ]
                 });
-
                 $('#linkLogin').click(function(event) {
                     $("#loginDialog").dialog("open");
+                    $("#loginDialog").dialog("option", "position", 'center');
                     event.preventDefault();
                 });
-
             });
 
 
@@ -79,6 +130,7 @@
 
         <div id="loginDialog" title="jetCore Login">
             <p class="validateTips">All form fields are required.</p>
+            <span id="login_response"></span>
 
             <sf:form id="loginForm" modelAttribute="loginForm">
                 <fieldset>
@@ -87,7 +139,11 @@
                     <label for="password">Password</label>
                     <sf:input type="password" name="password" id="password" value="" path ="password" cssClass="text ui-widget-content ui-corner-all" />
                 </fieldset>
+                <div id="appHome_Ajax_Loading">
+                    <img align="absmiddle" src="resources/assets/images/ajax-loader.gif">&nbsp;Processing...
+                </div>
             </sf:form>
+
         </div>
 
     </body>
