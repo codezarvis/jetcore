@@ -55,11 +55,7 @@
           class="org.springframework.web.servlet.i18n.CookieLocaleResolver" />
 
 
-    <!-- Exception handling resolvers -->
-    <!-- <bean class="com.javachap.web.exceptions.LeadExceptionResolver"> <property 
-    name="order" value="0" /> </bean> <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver"> 
-    <property name="order" value="1" /> <property name="exceptionMappings"> <props> 
-    <prop key="java.lang.Exception">error</prop> </props> </property> </bean> -->
+   
     <!-- json or xml view resolver -->
     <bean id="xStreamMarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller" />
         
