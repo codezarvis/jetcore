@@ -10,8 +10,7 @@
     </appender>
 	
     <appender name="fileout" class="org.apache.log4j.RollingFileAppender">
-        <!--     <param name="File" value="${catalina.home}/logs/dmslogs.log"/>-->
-        <param name="File" value="G:/logs/jetcore.log"/> 
+        <param name="File" value="G:/logs/jetcore.log"/>
         <param name="Append" value="true"/>
         <param name="MaxFileSize" value="1000KB"/> 
         <param name="MaxBackupIndex" value="2"/>
@@ -20,11 +19,15 @@
         </layout>
     </appender>	
 
-    <logger name="com">
+    <logger name="com.app">
         <level value="DEBUG" />
         <appender-ref ref="stdout" />		
         <appender-ref ref="fileout" />		
     </logger>
 	
-   
+    <!-- the root category -->
+    <root>
+        <level value="error" />
+        <appender-ref ref="stdout" />
+    </root>
 </log4j:configuration>
