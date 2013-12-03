@@ -1,0 +1,55 @@
+/* 
+    Document   : jetcore
+    Created on : Dec 3, 2013, 10:33:53 AM
+    Author     : Sudarsan
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+body {  margin:0;
+        padding:0;
+        width:100%;
+        color:#959595;
+        font:normal 11px/1.8em Arial, Helvetica, sans-serif;
+}
+label, input { display:block; }
+input.text { margin-bottom:12px; width:95%; padding: .4em; }
+fieldset { padding:0; border:0; margin-top:25px; }
+h1 { font-size: 1.2em; margin: .6em 0; }
+div#users-contain { width: 350px; margin: 20px 0; }
+div#users-contain table { margin: 1em 0; border-collapse: collapse; width: 100%; }
+div#users-contain table td, div#users-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align: left; }
+.ui-dialog .ui-state-error { padding: .3em; }
+.validateTips { border: 1px solid transparent; padding: 0.3em; }
+
+
+#notification_error {
+    color: red;
+    height: auto;
+    padding: 4px;
+    text-align: center;
+}
+
+#login_response {
+    overflow: auto;
+    color: #FF0000
+}
+
+#ajax_loading {
+    display: none;
+    font-size: 12px;
+    font-family: Tahoma;
+}
+
+#logged_in {
+    padding: 5px;
+    margin: 23px 0 100px 43px;
+    padding: 5px;
+    text-align: center;
+    width: 400px;
+}
+
+#status {
+    margin-top: 20px;
+    width: 310px;
+}
